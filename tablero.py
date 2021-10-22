@@ -1,4 +1,5 @@
 import pygame
+from pygame.locals import *
 
 # Inicializando pygame
 pygame.init()
@@ -92,8 +93,13 @@ def dibujaTablero(pantalla):
 
 def llenaTablero(pantalla):
     # Piezas blancas
+    #Posición
+    x=105
+    y=335
     peonBlanco1 = pygame.image.load("piezas/WhitePawn.png")
-    pantalla.blit(peonBlanco1, (105,395))
+    pantalla.blit(peonBlanco1, (x,y))
+
+
     peonBlanco2 = pygame.image.load("piezas/WhitePawn.png")
     pantalla.blit(peonBlanco1, (165,395))
     peonBlanco3 = pygame.image.load("piezas/WhitePawn.png")
@@ -111,41 +117,84 @@ def llenaTablero(pantalla):
     torreBlanca1 = pygame.image.load("piezas/WhiteRook.png")
     torreBlanca1 = pygame.transform.scale(torreBlanca1,(55,55))
     pantalla.blit(torreBlanca1, (105,455))
+    torreBlanca2 = pygame.transform.scale(torreBlanca1,(55,55))
+    pantalla.blit(torreBlanca1, (525, 455))
+    caballoBlanco1 = pygame.image.load("piezas/WhiteKnight.png")
+    caballoBlanco1 = pygame.transform.scale(caballoBlanco1,(55,55))
+    pantalla.blit(caballoBlanco1, (165 , 455))
+    caballoBlanco2 = pygame.transform.scale(caballoBlanco1, (55, 55))
+    pantalla.blit(caballoBlanco1, (465, 455))
+    alfilBlanco1 = pygame.image.load("piezas/WhiteBishop.png")
+    alfilBlanco1 = pygame.transform.scale(alfilBlanco1,(55,55))
+    pantalla.blit(alfilBlanco1, (225, 455))
+    alfilBlanco2 = pygame.transform.scale(alfilBlanco1, (55, 55))
+    pantalla.blit(alfilBlanco2, (405, 455))
+    reynaBlanca = pygame.image.load("piezas/WhiteQueen.png")
+    reynaBlanca = pygame.transform.scale(reynaBlanca, (55, 55))
+    pantalla.blit(reynaBlanca, (285, 455))
+    reyBlanco = pygame.image.load("piezas/WhiteKing.png")
+    reyBlanco = pygame.transform.scale(reyBlanco, (55, 55))
+    pantalla.blit(reyBlanco, (345, 455))
 
     # Piezas negras
     peonNegro1 = pygame.image.load("piezas/BlackPawn.png")
     pantalla.blit(peonNegro1, (105,95))
     peonNegro2 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro1, (165,95))
+    pantalla.blit(peonNegro2, (165,95))
     peonNegro3 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro1, (225,95))
+    pantalla.blit(peonNegro3, (225,95))
     peonNegro4 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro1, (285,95))
+    pantalla.blit(peonNegro4, (285,95))
     peonNegro5 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro1, (105,95))
+    pantalla.blit(peonNegro5, (345,95))
     peonNegro6 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro1, (345,95))
+    pantalla.blit(peonNegro6, (405,95))
     peonNegro7 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro1, (405,95))
+    pantalla.blit(peonNegro7, (465,95))
     peonNegro8 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro1, (465,95))
-    caballoNegro = pygame.image.load("piezas/caballo.jpg")
-    pantalla.blit(caballoNegro, (465, 55))
+    pantalla.blit(peonNegro8, (525,95))
+
+    torreNegra1 = pygame.image.load("piezas/BlackRook.png")
+    torreNegra1 = pygame.transform.scale(torreNegra1,(55,55))
+    pantalla.blit(torreNegra1, (105,35))
+    torreNegra2 = pygame.transform.scale(torreNegra1,(55,55))
+    pantalla.blit(torreNegra2, (525, 35))
+    caballoNegro1 = pygame.image.load("piezas/BlackKnight.png")
+    caballoNegro1 = pygame.transform.scale(caballoNegro1,(55,55))
+    pantalla.blit(caballoNegro1, (165 , 35))
+    caballoNegro2 = pygame.transform.scale(caballoNegro1, (55, 55))
+    pantalla.blit(caballoNegro2, (465, 35))
+    alfilNegro1 = pygame.image.load("piezas/BlackBishop.png")
+    alfilNegro1 = pygame.transform.scale(alfilNegro1,(55,55))
+    pantalla.blit(alfilNegro1, (225, 35))
+    alfilNegro2 = pygame.transform.scale(alfilNegro1, (55, 55))
+    pantalla.blit(alfilNegro2, (405, 35))
+    reynaNegra = pygame.image.load("piezas/BlackQueen.png")
+    reynaNegra = pygame.transform.scale(reynaNegra, (55, 55))
+    pantalla.blit(reynaNegra, (285, 35))
+    reyNegro = pygame.image.load("piezas/BlackKing.png")
+    reyNegro = pygame.transform.scale(reyNegro, (55, 55))
+    pantalla.blit(reyNegro, (345, 35))
 
 
 # Se ejecuta la ventana hasta que se decida cerrar
 def main():
     # Invoca a dibuja tablero
-
+    dibujaTablero(pantalla)
+    llenaTablero(pantalla)
     running = True
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
 
+            #Usando el evento para reconocer click izq del mouse
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                print("Se presionó el botón izquierdo del mouse")
+                mousex, mousey = pygame.mouse.get_pos()
+                print(mousex, mousey)
         pygame.display.update()
-        dibujaTablero(pantalla)
-        llenaTablero(pantalla)
+
 
 
 main()
