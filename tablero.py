@@ -10,7 +10,7 @@ pantalla = pygame.display.set_mode((700, 600))
 pygame.display.set_caption("Mi ajedrez en Python")
 
 # Definición del color de casillas
-negro = (0, 0, 0)
+negro = (100, 10, 10)
 blanco = (255, 255, 255)
 
 
@@ -91,8 +91,46 @@ def dibujaTablero(pantalla):
 
 
 def llenaTablero(pantalla):
-    playerImg = pygame.image.load("caballo.jpg")
-    pantalla.blit(playerImg, (465, 455))
+    # Piezas blancas
+    peonBlanco1 = pygame.image.load("piezas/WhitePawn.png")
+    pantalla.blit(peonBlanco1, (105,395))
+    peonBlanco2 = pygame.image.load("piezas/WhitePawn.png")
+    pantalla.blit(peonBlanco1, (165,395))
+    peonBlanco3 = pygame.image.load("piezas/WhitePawn.png")
+    pantalla.blit(peonBlanco1, (225,395))
+    peonBlanco4 = pygame.image.load("piezas/WhitePawn.png")
+    pantalla.blit(peonBlanco1, (285,395))
+    peonBlanco5 = pygame.image.load("piezas/WhitePawn.png")
+    pantalla.blit(peonBlanco1, (345,395))
+    peonBlanco6 = pygame.image.load("piezas/WhitePawn.png")
+    pantalla.blit(peonBlanco1, (405,395))
+    peonBlanco7 = pygame.image.load("piezas/WhitePawn.png")
+    pantalla.blit(peonBlanco1, (465,395))
+    peonBlanco8 = pygame.image.load("piezas/WhitePawn.png")
+    pantalla.blit(peonBlanco1, (525,395))
+    torreBlanca1 = pygame.image.load("piezas/WhiteRook.png")
+    torreBlanca1 = pygame.transform.scale(torreBlanca1,(55,55))
+    pantalla.blit(torreBlanca1, (105,455))
+
+    # Piezas negras
+    peonNegro1 = pygame.image.load("piezas/BlackPawn.png")
+    pantalla.blit(peonNegro1, (105,95))
+    peonNegro2 = pygame.image.load("piezas/BlackPawn.png")
+    pantalla.blit(peonNegro1, (165,95))
+    peonNegro3 = pygame.image.load("piezas/BlackPawn.png")
+    pantalla.blit(peonNegro1, (225,95))
+    peonNegro4 = pygame.image.load("piezas/BlackPawn.png")
+    pantalla.blit(peonNegro1, (285,95))
+    peonNegro5 = pygame.image.load("piezas/BlackPawn.png")
+    pantalla.blit(peonNegro1, (105,95))
+    peonNegro6 = pygame.image.load("piezas/BlackPawn.png")
+    pantalla.blit(peonNegro1, (345,95))
+    peonNegro7 = pygame.image.load("piezas/BlackPawn.png")
+    pantalla.blit(peonNegro1, (405,95))
+    peonNegro8 = pygame.image.load("piezas/BlackPawn.png")
+    pantalla.blit(peonNegro1, (465,95))
+    caballoNegro = pygame.image.load("piezas/caballo.jpg")
+    pantalla.blit(caballoNegro, (465, 55))
 
 
 # Se ejecuta la ventana hasta que se decida cerrar
