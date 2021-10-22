@@ -93,39 +93,38 @@ def dibujaTablero(pantalla):
 
 def llenaTablero(pantalla):
     # Piezas blancas
-    #Posición
-    x=105
-    y=335
+    # Posición
+    x = 105
+    y = 335
     peonBlanco1 = pygame.image.load("piezas/WhitePawn.png")
-    pantalla.blit(peonBlanco1, (x,y))
-
+    pantalla.blit(peonBlanco1, (x, y))
 
     peonBlanco2 = pygame.image.load("piezas/WhitePawn.png")
-    pantalla.blit(peonBlanco1, (165,395))
+    pantalla.blit(peonBlanco1, (165, 395))
     peonBlanco3 = pygame.image.load("piezas/WhitePawn.png")
-    pantalla.blit(peonBlanco1, (225,395))
+    pantalla.blit(peonBlanco1, (225, 395))
     peonBlanco4 = pygame.image.load("piezas/WhitePawn.png")
-    pantalla.blit(peonBlanco1, (285,395))
+    pantalla.blit(peonBlanco1, (285, 395))
     peonBlanco5 = pygame.image.load("piezas/WhitePawn.png")
-    pantalla.blit(peonBlanco1, (345,395))
+    pantalla.blit(peonBlanco1, (345, 395))
     peonBlanco6 = pygame.image.load("piezas/WhitePawn.png")
-    pantalla.blit(peonBlanco1, (405,395))
+    pantalla.blit(peonBlanco1, (405, 395))
     peonBlanco7 = pygame.image.load("piezas/WhitePawn.png")
-    pantalla.blit(peonBlanco1, (465,395))
+    pantalla.blit(peonBlanco1, (465, 395))
     peonBlanco8 = pygame.image.load("piezas/WhitePawn.png")
-    pantalla.blit(peonBlanco1, (525,395))
+    pantalla.blit(peonBlanco1, (525, 395))
     torreBlanca1 = pygame.image.load("piezas/WhiteRook.png")
-    torreBlanca1 = pygame.transform.scale(torreBlanca1,(55,55))
-    pantalla.blit(torreBlanca1, (105,455))
-    torreBlanca2 = pygame.transform.scale(torreBlanca1,(55,55))
+    torreBlanca1 = pygame.transform.scale(torreBlanca1, (55, 55))
+    pantalla.blit(torreBlanca1, (105, 455))
+    torreBlanca2 = pygame.transform.scale(torreBlanca1, (55, 55))
     pantalla.blit(torreBlanca1, (525, 455))
     caballoBlanco1 = pygame.image.load("piezas/WhiteKnight.png")
-    caballoBlanco1 = pygame.transform.scale(caballoBlanco1,(55,55))
-    pantalla.blit(caballoBlanco1, (165 , 455))
+    caballoBlanco1 = pygame.transform.scale(caballoBlanco1, (55, 55))
+    pantalla.blit(caballoBlanco1, (165, 455))
     caballoBlanco2 = pygame.transform.scale(caballoBlanco1, (55, 55))
     pantalla.blit(caballoBlanco1, (465, 455))
     alfilBlanco1 = pygame.image.load("piezas/WhiteBishop.png")
-    alfilBlanco1 = pygame.transform.scale(alfilBlanco1,(55,55))
+    alfilBlanco1 = pygame.transform.scale(alfilBlanco1, (55, 55))
     pantalla.blit(alfilBlanco1, (225, 455))
     alfilBlanco2 = pygame.transform.scale(alfilBlanco1, (55, 55))
     pantalla.blit(alfilBlanco2, (405, 455))
@@ -138,34 +137,34 @@ def llenaTablero(pantalla):
 
     # Piezas negras
     peonNegro1 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro1, (105,95))
+    pantalla.blit(peonNegro1, (105, 95))
     peonNegro2 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro2, (165,95))
+    pantalla.blit(peonNegro2, (165, 95))
     peonNegro3 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro3, (225,95))
+    pantalla.blit(peonNegro3, (225, 95))
     peonNegro4 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro4, (285,95))
+    pantalla.blit(peonNegro4, (285, 95))
     peonNegro5 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro5, (345,95))
+    pantalla.blit(peonNegro5, (345, 95))
     peonNegro6 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro6, (405,95))
+    pantalla.blit(peonNegro6, (405, 95))
     peonNegro7 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro7, (465,95))
+    pantalla.blit(peonNegro7, (465, 95))
     peonNegro8 = pygame.image.load("piezas/BlackPawn.png")
-    pantalla.blit(peonNegro8, (525,95))
+    pantalla.blit(peonNegro8, (525, 95))
 
     torreNegra1 = pygame.image.load("piezas/BlackRook.png")
-    torreNegra1 = pygame.transform.scale(torreNegra1,(55,55))
-    pantalla.blit(torreNegra1, (105,35))
-    torreNegra2 = pygame.transform.scale(torreNegra1,(55,55))
+    torreNegra1 = pygame.transform.scale(torreNegra1, (55, 55))
+    pantalla.blit(torreNegra1, (105, 35))
+    torreNegra2 = pygame.transform.scale(torreNegra1, (55, 55))
     pantalla.blit(torreNegra2, (525, 35))
     caballoNegro1 = pygame.image.load("piezas/BlackKnight.png")
-    caballoNegro1 = pygame.transform.scale(caballoNegro1,(55,55))
-    pantalla.blit(caballoNegro1, (165 , 35))
+    caballoNegro1 = pygame.transform.scale(caballoNegro1, (55, 55))
+    pantalla.blit(caballoNegro1, (165, 35))
     caballoNegro2 = pygame.transform.scale(caballoNegro1, (55, 55))
     pantalla.blit(caballoNegro2, (465, 35))
     alfilNegro1 = pygame.image.load("piezas/BlackBishop.png")
-    alfilNegro1 = pygame.transform.scale(alfilNegro1,(55,55))
+    alfilNegro1 = pygame.transform.scale(alfilNegro1, (55, 55))
     pantalla.blit(alfilNegro1, (225, 35))
     alfilNegro2 = pygame.transform.scale(alfilNegro1, (55, 55))
     pantalla.blit(alfilNegro2, (405, 35))
@@ -175,6 +174,53 @@ def llenaTablero(pantalla):
     reyNegro = pygame.image.load("piezas/BlackKing.png")
     reyNegro = pygame.transform.scale(reyNegro, (55, 55))
     pantalla.blit(reyNegro, (345, 35))
+
+    """
+        # Tuplas piezas blancas
+        peonBlanco1 = ('a', 2)
+        peonBlanco2 = ('b', 2)
+        peonBlanco3 = ('c', 2)
+        peonBlanco4 = ('d', 2)
+        peonBlanco5 = ('e', 2)
+        peonBlanco6 = ('f', 2)
+        peonBlanco7 = ('g', 2)
+        peonBlanco8 = ('h', 2)
+        torreBlanca1 = ('a', 1)
+        torreBlanca2 = ('h', 1)
+        caballoBlanco1 = ('b', 1)
+        caballoBlanco2 = ('g', 1)
+        alfilBlanco1 = ('c', 1)
+        alfilBlanco2 = ('f', 1)
+        reynaBlanca = ('d', 1)
+        reyBlanco = ('e', 1)
+
+        # Tuplas piezas negras
+        peonNegro1 = ('a', 7)
+        peonNegro2 = ('b', 7)
+        peonNegro3 = ('c', 7)
+        peonNegro4 = ('d', 7)
+        peonNegro5 = ('e', 7)
+        peonNegro6 = ('f', 7)
+        peonNegro7 = ('g', 7)
+        peonNegro8 = ('h', 7)
+        torreNegra1 = ('a', 8)
+        torreNegra2 = ('h', 8)
+        caballoNegro1 = ('b', 8)
+        caballoNegro2 = ('g', 8)
+        alfilNegro1 = ('c', 8)
+        alfilNegro2 = ('f', 8)
+        reynaNegra = ('d', 8)
+        reyNegro = ('e', 8)
+
+        piezas = [peonBlanco1, peonBlanco2, peonBlanco3, peonBlanco4, peonBlanco5, peonBlanco6, peonBlanco7, peonBlanco8,
+                  torreBlanca1, torreBlanca2, caballoBlanco1, caballoBlanco2, alfilBlanco1, alfilBlanco2, reynaBlanca,
+                  reyBlanco, peonNegro1, peonNegro2, peonNegro3, peonNegro4, peonNegro5, peonNegro6, peonNegro7, peonNegro8,
+                  torreNegra1, torreNegra2, caballoNegro1, caballoNegro2, alfilNegro1, alfilNegro2, reynaNegra, reyNegro]
+    """
+
+    diccionario = {'peonBlanco1':3}
+
+    print()
 
 
 # Se ejecuta la ventana hasta que se decida cerrar
@@ -188,13 +234,12 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
 
-            #Usando el evento para reconocer click izq del mouse
+            # Usando el evento para reconocer click izq del mouse
             if event.type == pygame.MOUSEBUTTONDOWN:
                 print("Se presionó el botón izquierdo del mouse")
                 mousex, mousey = pygame.mouse.get_pos()
                 print(mousex, mousey)
         pygame.display.update()
-
 
 
 main()
