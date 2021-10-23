@@ -175,53 +175,76 @@ def llenaTablero(pantalla):
     reyNegro = pygame.transform.scale(reyNegro, (55, 55))
     pantalla.blit(reyNegro, (345, 35))
 
-    """
-        # Tuplas piezas blancas
-        peonBlanco1 = ('a', 2)
-        peonBlanco2 = ('b', 2)
-        peonBlanco3 = ('c', 2)
-        peonBlanco4 = ('d', 2)
-        peonBlanco5 = ('e', 2)
-        peonBlanco6 = ('f', 2)
-        peonBlanco7 = ('g', 2)
-        peonBlanco8 = ('h', 2)
-        torreBlanca1 = ('a', 1)
-        torreBlanca2 = ('h', 1)
-        caballoBlanco1 = ('b', 1)
-        caballoBlanco2 = ('g', 1)
-        alfilBlanco1 = ('c', 1)
-        alfilBlanco2 = ('f', 1)
-        reynaBlanca = ('d', 1)
-        reyBlanco = ('e', 1)
 
-        # Tuplas piezas negras
-        peonNegro1 = ('a', 7)
-        peonNegro2 = ('b', 7)
-        peonNegro3 = ('c', 7)
-        peonNegro4 = ('d', 7)
-        peonNegro5 = ('e', 7)
-        peonNegro6 = ('f', 7)
-        peonNegro7 = ('g', 7)
-        peonNegro8 = ('h', 7)
-        torreNegra1 = ('a', 8)
-        torreNegra2 = ('h', 8)
-        caballoNegro1 = ('b', 8)
-        caballoNegro2 = ('g', 8)
-        alfilNegro1 = ('c', 8)
-        alfilNegro2 = ('f', 8)
-        reynaNegra = ('d', 8)
-        reyNegro = ('e', 8)
+    # Tuplas piezas blancas
+#    peonBlanco1 = ('a', 2)
+#    peonBlanco2 = ('b', 2)
+#    peonBlanco3 = ('c', 2)
+#    peonBlanco4 = ('d', 2)
+#    peonBlanco5 = ('e', 2)
+#    peonBlanco6 = ('f', 2)
+#    peonBlanco7 = ('g', 2)
+#    peonBlanco8 = ('h', 2)
+#    torreBlanca1 = ('a', 1)
+#    torreBlanca2 = ('h', 1)
+#    caballoBlanco1 = ('b', 1)
+#    caballoBlanco2 = ('g', 1)
+#    alfilBlanco1 = ('c', 1)
+#    alfilBlanco2 = ('f', 1)
+#    reynaBlanca = ('d', 1)
+#    reyBlanco = ('e', 1)
 
-        piezas = [peonBlanco1, peonBlanco2, peonBlanco3, peonBlanco4, peonBlanco5, peonBlanco6, peonBlanco7, peonBlanco8,
+    # Tuplas piezas negras
+    peonNegro1 = ("a7", "Peón", "Negro")
+    peonNegro2 = ('b', 7)
+    peonNegro3 = ('c', 7)
+    peonNegro4 = ('d', 7)
+    peonNegro5 = ('e', 7)
+    peonNegro6 = ('f', 7)
+    peonNegro7 = ('g', 7)
+    peonNegro8 = ('h', 7)
+    torreNegra1 = ('a', 8)
+    torreNegra2 = ('h', 8)
+    caballoNegro1 = ('b', 8)
+    caballoNegro2 = ('g', 8)
+    alfilNegro1 = ('c', 8)
+    alfilNegro2 = ('f', 8)
+    reynaNegra = ('d', 8)
+   # reyNegro = ('e8', "Rey", "Negro")
+
+
+    # Crear lista que almacene todas las tuplas
+    piezas = [peonBlanco1, peonBlanco2, peonBlanco3, peonBlanco4, peonBlanco5, peonBlanco6, peonBlanco7, peonBlanco8,
                   torreBlanca1, torreBlanca2, caballoBlanco1, caballoBlanco2, alfilBlanco1, alfilBlanco2, reynaBlanca,
                   reyBlanco, peonNegro1, peonNegro2, peonNegro3, peonNegro4, peonNegro5, peonNegro6, peonNegro7, peonNegro8,
                   torreNegra1, torreNegra2, caballoNegro1, caballoNegro2, alfilNegro1, alfilNegro2, reynaNegra, reyNegro]
-    """
+    print(piezas[0])
 
-    diccionario = {'peonBlanco1':3}
+    diccionario = { peonBlanco1:["a2","Peon","Blanco"], peonBlanco2:["b2","Peon","Blanco"], peonBlanco3:["c2", "Peon", "Blanco"],
+                    peonBlanco4:["d2", "Peon", "Blanco"], peonBlanco5:["e2", "Peon", "Blanco"], peonBlanco6:["f2", "Peon", "Blanco"],
+                    peonBlanco7:["g2", "Peon", "Blanco"], peonBlanco8:["h2", "Peon", "Blanco"], torreBlanca1:["a1", "Torre", ],
+                    reyNegro:["e8", "Rey", "Negro"]}
 
-    print()
+    # 4. Cambia el valor de la variable de posición de una pieza
+    diccionario[peonBlanco7][0]="g3"
+    print(diccionario[peonBlanco1])
 
+    # 5. Cambia la variable de nombre de una pieza. La imagen del peonBlanco7 por el de la reynaBlanca
+    diccionario[peonBlanco7][1]=reynaBlanca
+    print(diccionario[peonBlanco7])
+    # Poner las coordenadas correctas del peonBlanco7
+    x, y = 465, 395
+    # Visualizar en el tablero
+    pantalla.blit(diccionario[peonBlanco7][1], (x, y))
+    #pantalla.blit(peonBlanco, (x, y))
+
+    # 6. Cambia la variable bando de una pieza. La imagen del reyNegro
+    diccionario[reyNegro][2]=reyBlanco
+    print(diccionario[reyNegro])
+
+    # Coordenadas del reyNegro
+    x,y = 345, 35
+    pantalla.blit(diccionario[reyNegro][2], (x, y))
 
 # Se ejecuta la ventana hasta que se decida cerrar
 def main():
