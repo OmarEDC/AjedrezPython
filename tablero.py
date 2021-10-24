@@ -98,7 +98,6 @@ def llenaTablero(pantalla):
     y = 335
     peonBlanco1 = pygame.image.load("piezas/WhitePawn.png")
     pantalla.blit(peonBlanco1, (x, y))
-
     peonBlanco2 = pygame.image.load("piezas/WhitePawn.png")
     pantalla.blit(peonBlanco1, (165, 395))
     peonBlanco3 = pygame.image.load("piezas/WhitePawn.png")
@@ -195,22 +194,22 @@ def llenaTablero(pantalla):
 #    reyBlanco = ('e', 1)
 
     # Tuplas piezas negras
-    peonNegro1 = ("a7", "Peón", "Negro")
-    peonNegro2 = ('b', 7)
-    peonNegro3 = ('c', 7)
-    peonNegro4 = ('d', 7)
-    peonNegro5 = ('e', 7)
-    peonNegro6 = ('f', 7)
-    peonNegro7 = ('g', 7)
-    peonNegro8 = ('h', 7)
-    torreNegra1 = ('a', 8)
-    torreNegra2 = ('h', 8)
-    caballoNegro1 = ('b', 8)
-    caballoNegro2 = ('g', 8)
-    alfilNegro1 = ('c', 8)
-    alfilNegro2 = ('f', 8)
-    reynaNegra = ('d', 8)
-   # reyNegro = ('e8', "Rey", "Negro")
+#    peonNegro1 = ("a7", "Peón", "Negro")
+#    peonNegro2 = ('b', 7)
+#    peonNegro3 = ('c', 7)
+#    peonNegro4 = ('d', 7)
+#    peonNegro5 = ('e', 7)
+#    peonNegro6 = ('f', 7)
+#    peonNegro7 = ('g', 7)
+#    peonNegro8 = ('h', 7)
+#    torreNegra1 = ('a', 8)
+#    torreNegra2 = ('h', 8)
+#    caballoNegro1 = ('b', 8)
+#    caballoNegro2 = ('g', 8)
+#    alfilNegro1 = ('c', 8)
+#    alfilNegro2 = ('f', 8)
+#    reynaNegra = ('d', 8)
+#    reyNegro = ('e', 8)
 
 
     # Crear lista que almacene todas las tuplas
@@ -220,31 +219,58 @@ def llenaTablero(pantalla):
                   torreNegra1, torreNegra2, caballoNegro1, caballoNegro2, alfilNegro1, alfilNegro2, reynaNegra, reyNegro]
     print(piezas[0])
 
-    diccionario = { peonBlanco1:["a2","Peon","Blanco"], peonBlanco2:["b2","Peon","Blanco"], peonBlanco3:["c2", "Peon", "Blanco"],
-                    peonBlanco4:["d2", "Peon", "Blanco"], peonBlanco5:["e2", "Peon", "Blanco"], peonBlanco6:["f2", "Peon", "Blanco"],
-                    peonBlanco7:["g2", "Peon", "Blanco"], peonBlanco8:["h2", "Peon", "Blanco"], torreBlanca1:["a1", "Torre", ],
-                    reyNegro:["e8", "Rey", "Negro"]}
+    diccionario = { peonBlanco1:["a", 2,"Peon","Blanco"], peonBlanco2:["b", 2,"Peon","Blanco"], peonBlanco3:["c", 2, "Peon", "Blanco"],
+                    peonBlanco4:["d", 2, "Peon", "Blanco"], peonBlanco5:["e", 2, "Peon", "Blanco"], peonBlanco6:["f", 2, "Peon", "Blanco"],
+                    peonBlanco7:["g", 2, "Peon", "Blanco"], peonBlanco8:["h", 2, "Peon", "Blanco"], torreBlanca1:["a", 1, "Torre", "Blanco"],
+                    torreBlanca2:["h", 1, "Torre", "Blanco"], caballoBlanco1:["b", 1, "Caballo", "Blanco"], caballoBlanco2:["g", 1, "Caballo", "Blanco"],
+                    alfilBlanco1:["c", 1, "Alfil", "Blanco"], alfilBlanco2:["f", 1, "Alfil", "Blanco"], reynaBlanca:["d", 1, "Reyna", "Blanco"],
+                    peonNegro1:["a", 7, "Peon", "Negro"], peonNegro2:["b", 7, "Peon", "Negro"], peonNegro3:["c", 7, "Peon", "Negro"],
+                    peonNegro4:["d", 7, "Peon", "Negro"], peonNegro5:["e", 7, "Peon", "Negro"], peonNegro6:["f", 7, "Peon", "Negro"],
+                    peonNegro7:["g", 7, "Peon", "Negro"], peonNegro7:["h", 7, "Peon", "Negro"], torreNegra1:["a", 7,"Torre", "Negro"],
+                    torreNegra2:["h", 8, "Torre", "Negro"], caballoNegro1:["b", 8, "Caballo", "Negro"], caballoNegro2:["g", 8, "Caballo", "Negro"],
+                    alfilNegro1:["c", 8, "Alfil", "Negro"], alfilNegro2:["f", 8, "Alfil", "Negro"], reynaNegra:["d", 8, "Reyna", "Negro"],
+                    reyNegro:["e", 8, "Rey", "Negro"]}
 
     # 4. Cambia el valor de la variable de posición de una pieza
-    diccionario[peonBlanco7][0]="g3"
-    print(diccionario[peonBlanco1])
+    # diccionario[peonBlanco7][0] = "g3"
+    # print(diccionario[peonBlanco1])
 
     # 5. Cambia la variable de nombre de una pieza. La imagen del peonBlanco7 por el de la reynaBlanca
-    diccionario[peonBlanco7][1]=reynaBlanca
-    print(diccionario[peonBlanco7])
+    # diccionario[peonBlanco7][1] = reynaBlanca
+    # print(diccionario[peonBlanco7])
     # Poner las coordenadas correctas del peonBlanco7
-    x, y = 465, 395
+    # x, y = 465, 395
     # Visualizar en el tablero
-    pantalla.blit(diccionario[peonBlanco7][1], (x, y))
-    #pantalla.blit(peonBlanco, (x, y))
+    # pantalla.blit(diccionario[peonBlanco7][1], (x, y))
+    # pantalla.blit(peonBlanco, (x, y))
 
     # 6. Cambia la variable bando de una pieza. La imagen del reyNegro
-    diccionario[reyNegro][2]=reyBlanco
-    print(diccionario[reyNegro])
+    # diccionario[reyNegro][2] = reyBlanco
+    # print(diccionario[reyNegro])
 
     # Coordenadas del reyNegro
-    x,y = 345, 35
-    pantalla.blit(diccionario[reyNegro][2], (x, y))
+    # x, y = 345, 35
+    # pantalla.blit(diccionario[reyNegro][2], (x, y))
+
+    # Obteniendo casilla actual del peón, en este caso peonBlanco1
+    x1 = diccionario[peonBlanco1][0]  # columna 'a'
+    y1 = diccionario[peonBlanco1][1]  # fila 2
+
+    # Suponiendo que el peón se quiere mover a la casilla a3, entonces:
+    x2 = 'e'
+    y2 = 10
+
+    # Movimiento de los peones
+    if x1 == x2 and x2=='a' or x2=='b' or x2=='c' or x2=='d' or x=='e' or x=='f' or x=='g' or x=='h' and y1 <=9:
+        print("Mueve peon")
+        # Actualizando la posición del peón
+        diccionario[peonBlanco1][1] = diccionario[peonBlanco1][1] + 1
+    else:
+        print("Movimiento no válido")
+
+    print(diccionario[peonBlanco1])
+
+
 
 # Se ejecuta la ventana hasta que se decida cerrar
 def main():
