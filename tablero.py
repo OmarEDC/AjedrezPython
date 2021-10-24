@@ -17,6 +17,7 @@ blanco = (255, 255, 255)
 
 def dibujaTablero(pantalla):
     pantalla.fill((47, 79, 79))
+    """
     # Fila 1
     pygame.draw.rect(pantalla, negro, pygame.Rect(100, 30, 60, 60))
     pygame.draw.rect(pantalla, blanco, pygame.Rect(160, 30, 60, 60))
@@ -90,12 +91,75 @@ def dibujaTablero(pantalla):
     pygame.draw.rect(pantalla, blanco, pygame.Rect(460, 450, 60, 60))
     pygame.draw.rect(pantalla, negro, pygame.Rect(520, 450, 60, 60))
 
+    #Pintar tablero de 8*8 con while
+    i=0
+    x=100
+    y=30
+    bandera=0
+    j=0
+    while j!=8:
+        while i!=8:
+            if bandera == 0:
+                i+=1
+                pygame.draw.rect(pantalla, blanco, pygame.Rect(x, y, 60, 60))
+                x=x+60
+                bandera=1
+            else:
+                i+=1
+                pygame.draw.rect(pantalla, negro, pygame.Rect(x, y, 60, 60))
+                x = x + 60
+                bandera = 0
+        if i==8 and bandera == 1:
+            bandera = 0
+        else:
+            bandera = 1
+        j += 1
+        i = 0
+        y += 60
+        x = 100
+"""
+    bandera=0
+    x = 100
+    y = 30
+    for i in range(64):
+        if bandera == 0:
+            i += 1
+            pygame.draw.rect(pantalla, blanco, pygame.Rect(x, y, 60, 60))
+            x = x + 60
+            bandera = 1
+        else:
+            i += 1
+            pygame.draw.rect(pantalla, negro, pygame.Rect(x, y, 60, 60))
+            x = x + 60
+            bandera = 0
+        if i==8 or i==16 or i==24 or i==32 or i==40 or i==48 or i==56:
+            y=y+60
+            x=100
+            if bandera==0:
+                bandera=1
+            else:
+                bandera=0
+
+
 
 def llenaTablero(pantalla):
+    peonBlanco = pygame.image.load("piezas/WhitePawn.png")
+    torreBlanca = pygame.image.load("piezas/WhiteRook.png")
+    caballoBlanco = pygame.image.load("piezas/WhiteKnight.png")
+    alfilBlanco = pygame.image.load("piezas/WhiteBishop.png")
+    reynaBlanca = pygame.image.load("piezas/WhiteQueen.png")
+    reyBlanco = pygame.image.load("piezas/WhiteKing.png")
+    peonNegro = pygame.image.load("piezas/BlackPawn.png")
+    torreNegra = pygame.image.load("piezas/BlackRook.png")
+    caballoNegro = pygame.image.load("piezas/BlackKnight.png")
+    alfilNegro = pygame.image.load("piezas/BlackBishop.png")
+    reynaNegra = pygame.image.load("piezas/BlackQueen.png")
+    reyNegro = pygame.image.load("piezas/BlackKing.png")
+
     # Piezas blancas
     # Posición
     x = 105
-    y = 335
+    y = 395
     peonBlanco1 = pygame.image.load("piezas/WhitePawn.png")
     pantalla.blit(peonBlanco1, (x, y))
     peonBlanco2 = pygame.image.load("piezas/WhitePawn.png")
@@ -176,40 +240,40 @@ def llenaTablero(pantalla):
 
 
     # Tuplas piezas blancas
-#    peonBlanco1 = ('a', 2)
-#    peonBlanco2 = ('b', 2)
-#    peonBlanco3 = ('c', 2)
-#    peonBlanco4 = ('d', 2)
-#    peonBlanco5 = ('e', 2)
-#    peonBlanco6 = ('f', 2)
-#    peonBlanco7 = ('g', 2)
-#    peonBlanco8 = ('h', 2)
-#    torreBlanca1 = ('a', 1)
-#    torreBlanca2 = ('h', 1)
-#    caballoBlanco1 = ('b', 1)
-#    caballoBlanco2 = ('g', 1)
-#    alfilBlanco1 = ('c', 1)
-#    alfilBlanco2 = ('f', 1)
-#    reynaBlanca = ('d', 1)
-#    reyBlanco = ('e', 1)
+    peonBlanco1 = ('a', 2)
+    peonBlanco2 = ('b', 2)
+    peonBlanco3 = ('c', 2)
+    peonBlanco4 = ('d', 2)
+    peonBlanco5 = ('e', 2)
+    peonBlanco6 = ('f', 2)
+    peonBlanco7 = ('g', 2)
+    peonBlanco8 = ('h', 2)
+    torreBlanca1 = ('a', 1)
+    torreBlanca2 = ('h', 1)
+    caballoBlanco1 = ('b', 1)
+    caballoBlanco2 = ('g', 1)
+    alfilBlanco1 = ('c', 1)
+    alfilBlanco2 = ('f', 1)
+    reynaBlanca = ('d', 1)
+    reyBlanco = ('e', 1)
 
     # Tuplas piezas negras
-#    peonNegro1 = ("a7", "Peón", "Negro")
-#    peonNegro2 = ('b', 7)
-#    peonNegro3 = ('c', 7)
-#    peonNegro4 = ('d', 7)
-#    peonNegro5 = ('e', 7)
-#    peonNegro6 = ('f', 7)
-#    peonNegro7 = ('g', 7)
-#    peonNegro8 = ('h', 7)
-#    torreNegra1 = ('a', 8)
-#    torreNegra2 = ('h', 8)
-#    caballoNegro1 = ('b', 8)
-#    caballoNegro2 = ('g', 8)
-#    alfilNegro1 = ('c', 8)
-#    alfilNegro2 = ('f', 8)
-#    reynaNegra = ('d', 8)
-#    reyNegro = ('e', 8)
+    peonNegro1 = ("a7", "Peón", "Negro")
+    peonNegro2 = ('b', 7)
+    peonNegro3 = ('c', 7)
+    peonNegro4 = ('d', 7)
+    peonNegro5 = ('e', 7)
+    peonNegro6 = ('f', 7)
+    peonNegro7 = ('g', 7)
+    peonNegro8 = ('h', 7)
+    torreNegra1 = ('a', 8)
+    torreNegra2 = ('h', 8)
+    caballoNegro1 = ('b', 8)
+    caballoNegro2 = ('g', 8)
+    alfilNegro1 = ('c', 8)
+    alfilNegro2 = ('f', 8)
+    reynaNegra = ('d', 8)
+    reyNegro = ('e', 8)
 
 
     # Crear lista que almacene todas las tuplas
@@ -219,17 +283,56 @@ def llenaTablero(pantalla):
                   torreNegra1, torreNegra2, caballoNegro1, caballoNegro2, alfilNegro1, alfilNegro2, reynaNegra, reyNegro]
     print(piezas[0])
 
-    diccionario = { peonBlanco1:["a", 2,"Peon","Blanco"], peonBlanco2:["b", 2,"Peon","Blanco"], peonBlanco3:["c", 2, "Peon", "Blanco"],
-                    peonBlanco4:["d", 2, "Peon", "Blanco"], peonBlanco5:["e", 2, "Peon", "Blanco"], peonBlanco6:["f", 2, "Peon", "Blanco"],
-                    peonBlanco7:["g", 2, "Peon", "Blanco"], peonBlanco8:["h", 2, "Peon", "Blanco"], torreBlanca1:["a", 1, "Torre", "Blanco"],
-                    torreBlanca2:["h", 1, "Torre", "Blanco"], caballoBlanco1:["b", 1, "Caballo", "Blanco"], caballoBlanco2:["g", 1, "Caballo", "Blanco"],
-                    alfilBlanco1:["c", 1, "Alfil", "Blanco"], alfilBlanco2:["f", 1, "Alfil", "Blanco"], reynaBlanca:["d", 1, "Reyna", "Blanco"],
-                    peonNegro1:["a", 7, "Peon", "Negro"], peonNegro2:["b", 7, "Peon", "Negro"], peonNegro3:["c", 7, "Peon", "Negro"],
-                    peonNegro4:["d", 7, "Peon", "Negro"], peonNegro5:["e", 7, "Peon", "Negro"], peonNegro6:["f", 7, "Peon", "Negro"],
-                    peonNegro7:["g", 7, "Peon", "Negro"], peonNegro7:["h", 7, "Peon", "Negro"], torreNegra1:["a", 7,"Torre", "Negro"],
-                    torreNegra2:["h", 8, "Torre", "Negro"], caballoNegro1:["b", 8, "Caballo", "Negro"], caballoNegro2:["g", 8, "Caballo", "Negro"],
-                    alfilNegro1:["c", 8, "Alfil", "Negro"], alfilNegro2:["f", 8, "Alfil", "Negro"], reynaNegra:["d", 8, "Reyna", "Negro"],
-                    reyNegro:["e", 8, "Rey", "Negro"]}
+
+
+    diccionario = { 1:["a", 2,"Peon","Blanco"], 2:["b", 2,"Peon","Blanco"], 3:["c", 2, "Peon", "Blanco"],
+                    4:["d", 2, "Peon", "Blanco"], 5:["e", 2, "Peon", "Blanco"], 6:["f", 2, "Peon", "Blanco"],
+                    7:["g", 2, "Peon", "Blanco"], 8:["h", 2, "Peon", "Blanco"], 9:["a", 1, "Torre", "Blanco"],
+                    10:["h", 1, "Torre", "Blanco"], 11:["b", 1, "Caballo", "Blanco"], 12:["g", 1, "Caballo", "Blanco"],
+                    13:["c", 1, "Alfil", "Blanco"], 14:["f", 1, "Alfil", "Blanco"], 15:["d", 1, "Reyna", "Blanco"],
+                    16:["e", 1, "Rey", "Blanco"], 17:["a", 7, "Peon", "Negro"], 18:["b", 7, "Peon", "Negro"],
+                    19:["c", 7, "Peon", "Negro"], 20:["d", 7, "Peon", "Negro"], 21:["e", 7, "Peon", "Negro"],
+                    22:["f", 7, "Peon", "Negro"], 23:["g", 7, "Peon", "Negro"], 24:["h", 7, "Peon", "Negro"],
+                    25:["a", 7,"Torre", "Negro"], 26:["h", 8, "Torre", "Negro"], 27:["b", 8, "Caballo", "Negro"],
+                    28:["g", 8, "Caballo", "Negro"], 29:["c", 8, "Alfil", "Negro"], 30:["f", 8, "Alfil", "Negro"],
+                    31:["d", 8, "Reyna", "Negro"], 32:["e", 8, "Rey", "Negro"]}
+
+
+    #5. Cambiar todas las piezas de ajedrez al bando blanco
+
+    #i=0
+    #while i!=32:
+    #    i+=1
+    #    diccionario[i][3]="Blanco"
+    #    print(diccionario[i])
+
+    #Cambia de bando sólo al equipo blanco al negro
+    #i=0
+    #while i!=32:
+    #    i+=1
+    #    if diccionario[i][3]=="Blanco":
+    #        diccionario[i][3] = "Negro"
+    #        print(diccionario[i])
+
+    #Contar cada pieza de ajedrez
+    piezasTotales=0
+    for pieza in piezas:
+        piezasTotales+=1
+    print("la cantidad de piezas son: ",piezasTotales)
+
+    #Contar total de piezas por bando
+    iB=0
+    iW=0
+    n=0
+    for pieza in piezas:
+        n+=1
+        if diccionario[n][3]=="Blanco":
+            iW+=1
+        else:
+            iB+=1
+    print("Piezas blancas totales: ", iW)
+    print("Piezas negras totales: ", iB)
+
 
     # 4. Cambia el valor de la variable de posición de una pieza
     # diccionario[peonBlanco7][0] = "g3"
@@ -251,7 +354,7 @@ def llenaTablero(pantalla):
     # Coordenadas del reyNegro
     # x, y = 345, 35
     # pantalla.blit(diccionario[reyNegro][2], (x, y))
-
+"""
     # Obteniendo casilla actual del peón, en este caso peonBlanco1
     x1 = diccionario[peonBlanco1][0]  # columna 'a'
     y1 = diccionario[peonBlanco1][1]  # fila 2
@@ -261,7 +364,7 @@ def llenaTablero(pantalla):
     y2 = 10
 
     # Movimiento de los peones
-    if x1 == x2 and x2=='a' or x2=='b' or x2=='c' or x2=='d' or x=='e' or x=='f' or x=='g' or x=='h' and y1 <=9:
+    if x1 == x2 and x2=='a' or x2=='b' or x2=='c' or x2=='d' or x2=='e' or x2=='f' or x2=='g' or x2=='h' and y1 <=9:
         print("Mueve peon")
         # Actualizando la posición del peón
         diccionario[peonBlanco1][1] = diccionario[peonBlanco1][1] + 1
@@ -269,7 +372,7 @@ def llenaTablero(pantalla):
         print("Movimiento no válido")
 
     print(diccionario[peonBlanco1])
-
+"""
 
 
 # Se ejecuta la ventana hasta que se decida cerrar
@@ -278,6 +381,7 @@ def main():
     dibujaTablero(pantalla)
     llenaTablero(pantalla)
     running = True
+
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -288,6 +392,11 @@ def main():
                 print("Se presionó el botón izquierdo del mouse")
                 mousex, mousey = pygame.mouse.get_pos()
                 print(mousex, mousey)
+
+            if event.type == pygame.KEYDOWN:
+                #La ventana no se cierra con break, se debe cambiar a false la variable running para salir del bucle "While"
+                if event.key == pygame.K_c:
+                    running = False
         pygame.display.update()
 
 
