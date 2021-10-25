@@ -356,18 +356,7 @@ def imprimeTablero():
             else:
                 bandera=0
 
-def imprimePieza(diccionario):
-    # Imprimir piezas
-    pantalla.blit(peonBlanco1, (105, 395))
-    pantalla.blit(peonBlanco5, (165, 95))
-    pantalla.blit(peonBlanco6, (225, 395))
-    pantalla.blit(torreBlanca1, (105, 455))
-    pantalla.blit(torreBlanca1, (525, 455))
-    pantalla.blit(caballoBlanco1, (165, 455))
-    pantalla.blit(caballoNegro1, (465, 455))
-    pantalla.blit(alfilBlanco1, (225, 455))
 
-    pantalla.blit(reyBlanco, (345, 455))
 
 
 def limpiaTablero():
@@ -441,7 +430,7 @@ def limpiaTablero1():
     pantalla.blit(reynaBlanca, (285, 315))
     pantalla.blit(reyBlanco, (345, 455))
 
-
+"""
 # Se ejecuta la ventana hasta que se decida cerrar
 def main():
 
@@ -458,8 +447,8 @@ def main():
                    28: ["g", 8, "Caballo", "Negro"], 29: ["c", 8, "Alfil", "Negro"], 30: ["f", 8, "Alfil", "Negro"],
                    31: ["d", 8, "Reyna", "Negro"], 32: ["e", 8, "Rey", "Negro"], 33: ["e", 8, "Rey", "Negro"]}
 
-    imprimeTablero()
-    imprimePieza(diccionario)
+ #   imprimeTablero()
+#    imprimePieza(diccionario)
     # Invoca a dibuja tablero
     #dibujaTablero(pantalla)
     #llenaTablero(pantalla)
@@ -487,3 +476,14 @@ def main():
         pygame.display.update()
 
 main()
+"""
+
+class piezaObjeto:
+    def __init__(self, bando, tipoDePieza, imagen, posicionInicial, posicionActual):
+        self.bando=bando
+        self.tipoDePieza=tipoDePieza
+        self.imagen=imagen
+        self.posicionInicial=posicionInicial
+        self.posicionActual=posicionActual
+
+
