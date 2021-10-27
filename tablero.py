@@ -10,8 +10,11 @@ pantalla = pygame.display.set_mode((700, 600))
 pygame.display.set_caption("Mi ajedrez en Python")
 
 # Definición del color de casillas
-negro = (100, 10, 10)
-blanco = (255, 255, 255)
+
+
+#Coordenadas
+x=0
+y=0
 
 peonBlanco = pygame.image.load("piezas/WhitePawn.png")
 torreBlanca = pygame.image.load("piezas/WhiteRook.png")
@@ -171,7 +174,7 @@ def dibujaTablero(pantalla):
         i = 0
         y += 60
         x = 100
-"""
+
     bandera=0
     x = 100
     y = 30
@@ -194,7 +197,7 @@ def dibujaTablero(pantalla):
             else:
                 bandera=0
 
-
+"""
 
 def llenaTablero(pantalla):
 
@@ -333,7 +336,7 @@ def llenaTablero(pantalla):
     print(diccionario[peonBlanco1])
 """
 
-def imprimeTablero():
+def imprimeTablero(negro, blanco):
     bandera=0
     x = 100
     y = 30
@@ -396,40 +399,6 @@ def limpiaTablero():
 
 
 
-def limpiaTablero1():
-    pantalla.blit(peonNegro1, (105, 135))
-    pantalla.blit(peonNegro2, (165, 95))
-    pantalla.blit(peonNegro3, (225, 95))
-    pantalla.blit(peonNegro4, (285, 95))
-    pantalla.blit(peonNegro5, (345, 95))
-    pantalla.blit(peonNegro6, (405, 95))
-    pantalla.blit(peonNegro7, (465, 95))
-    pantalla.blit(peonNegro8, (525, 95))
-    pantalla.blit(torreNegra1, (105, 35))
-    pantalla.blit(torreNegra2, (525, 35))
-    pantalla.blit(caballoNegro1, (165, 35))
-    pantalla.blit(caballoNegro2, (465, 35))
-    pantalla.blit(alfilNegro1, (225, 35))
-    pantalla.blit(alfilNegro2, (405, 35))
-    pantalla.blit(reynaNegra, (285, 35))
-    pantalla.blit(reyNegro, (345, 35))
-    pantalla.blit(peonBlanco1, (105, 395))
-    pantalla.blit(peonBlanco1, (165, 395))
-    pantalla.blit(peonBlanco1, (225, 395))
-    pantalla.blit(peonBlanco1, (285, 395))
-    pantalla.blit(peonBlanco1, (345, 395))
-    pantalla.blit(peonBlanco1, (405, 395))
-    pantalla.blit(peonBlanco1, (465, 395))
-    pantalla.blit(peonBlanco1, (525, 395))
-    pantalla.blit(torreBlanca1, (105, 455))
-    pantalla.blit(torreBlanca1, (525, 455))
-    pantalla.blit(caballoBlanco1, (165, 455))
-    pantalla.blit(caballoBlanco1, (465, 455))
-    pantalla.blit(alfilBlanco1, (225, 455))
-    pantalla.blit(alfilBlanco2, (405, 455))
-    pantalla.blit(reynaBlanca, (285, 315))
-    pantalla.blit(reyBlanco, (345, 455))
-
 """
 # Se ejecuta la ventana hasta que se decida cerrar
 def main():
@@ -478,6 +447,10 @@ def main():
 main()
 """
 
+
+
+
+
 class piezaObjeto:
     def __init__(self, bando, tipoDePieza, imagen, posicionInicial, posicionActual):
         self.bando=bando
@@ -485,5 +458,51 @@ class piezaObjeto:
         self.imagen=imagen
         self.posicionInicial=posicionInicial
         self.posicionActual=posicionActual
+
+    def mostrarPieza(self):
+        if self.posicionActual[0] == "a":
+            x = 105
+        if self.posicionActual[0] == "b":
+            x = 165
+        if self.posicionActual[0] == "c":
+            x = 225
+        if self.posicionActual[0] == "d":
+            x = 285
+        if self.posicionActual[0] == "e":
+            x = 345
+        if self.posicionActual[0] == "f":
+            x = 405
+        if self.posicionActual[0] == "g":
+            x = 465
+        if self.posicionActual[0] == "h":
+            x = 525
+        if self.posicionActual[1] == 1:
+            y = 455
+        if self.posicionActual[1] == 2:
+            y = 395
+        if self.posicionActual[1] == 3:
+            y = 335
+        if self.posicionActual[1] == 4:
+            y = 275
+        if self.posicionActual[1] == 5:
+            y = 215
+        if self.posicionActual[1] == 6:
+            y = 155
+        if self.posicionActual[1] == 7:
+            y = 95
+        if self.posicionActual[1] == 8:
+            y = 35
+        pantalla.blit(self.imagen, (x, y))
+        #pantalla.blit(self.imagen)
+
+    def moverPieza(self,columna,renglon):
+        self.posicionActual=[columna,renglon]
+
+
+    def eliminaPieza(self):
+        print("Parametro activo se cambia a falso")
+
+   # def eliminaPieza(self):
+
 
 
