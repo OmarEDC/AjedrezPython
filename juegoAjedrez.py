@@ -8,32 +8,34 @@ pantalla.fill((0, 0, 0))
 azul = (0, 0, 255)
 verde=(0,255,0)
 rojo=(255,0,0)
-negro = (100, 10, 10)
-blanco = (255, 255, 255)
+
+ajusteTamaño=(55,55)
+
+#Coordenadas
 
 
 peonBlanco = pygame.image.load("piezas/WhitePawn.png")
 torreBlanca = pygame.image.load("piezas/WhiteRook.png")
-torreBlanca = pygame.transform.scale(torreBlanca, (55, 55))
+torreBlanca = pygame.transform.scale(torreBlanca, (ajusteTamaño))
 caballoBlanco = pygame.image.load("piezas/WhiteKnight.png")
-caballoBlanco = pygame.transform.scale(caballoBlanco, (55, 55))
+caballoBlanco = pygame.transform.scale(caballoBlanco, (ajusteTamaño))
 alfilBlanco = pygame.image.load("piezas/WhiteBishop.png")
-alfilBlanco = pygame.transform.scale(alfilBlanco, (55, 55))
+alfilBlanco = pygame.transform.scale(alfilBlanco, (ajusteTamaño))
 reynaBlanca = pygame.image.load("piezas/WhiteQueen.png")
-reynaBlanca = pygame.transform.scale(reynaBlanca, (55, 55))
+reynaBlanca = pygame.transform.scale(reynaBlanca, (ajusteTamaño))
 reyBlanco = pygame.image.load("piezas/WhiteKing.png")
-reyBlanco = pygame.transform.scale(reyBlanco, (55, 55))
+reyBlanco = pygame.transform.scale(reyBlanco, (ajusteTamaño))
 peonNegro = pygame.image.load("piezas/BlackPawn.png")
 torreNegra = pygame.image.load("piezas/BlackRook.png")
-torreNegra = pygame.transform.scale(torreNegra, (55, 55))
+torreNegra = pygame.transform.scale(torreNegra, (ajusteTamaño))
 caballoNegro = pygame.image.load("piezas/BlackKnight.png")
-caballoNegro = pygame.transform.scale(caballoNegro, (55, 55))
+caballoNegro = pygame.transform.scale(caballoNegro, (ajusteTamaño))
 alfilNegro = pygame.image.load("piezas/BlackBishop.png")
-alfilNegro = pygame.transform.scale(alfilNegro, (55, 55))
+alfilNegro = pygame.transform.scale(alfilNegro, (ajusteTamaño))
 reynaNegra = pygame.image.load("piezas/BlackQueen.png")
-reynaNegra = pygame.transform.scale(reynaNegra, (55, 55))
+reynaNegra = pygame.transform.scale(reynaNegra, (ajusteTamaño))
 reyNegro = pygame.image.load("piezas/BlackKing.png")
-reyNegro = pygame.transform.scale(reyNegro, (55, 55))
+reyNegro = pygame.transform.scale(reyNegro, (ajusteTamaño))
 
 peonBlanco1 = tablero.piezaObjeto("Blanco", "Peon", peonBlanco, ["a",2], ["a", 2])
 peonBlanco2 = tablero.piezaObjeto("Blanco", "Peon", peonBlanco, ["b", 2], ["b", 2])
@@ -69,7 +71,7 @@ alfilNegro2 = tablero.piezaObjeto("Negro", "Alfil", alfilNegro, ["f", 8], ["f", 
 reynaNegra1 = tablero.piezaObjeto("Negro", "Reyna", reynaNegra, ["d", 8], ["d",8])
 reyNegro1 = tablero.piezaObjeto("Negro", "Rey", reyNegro, ["e", 8], ["e", 8])
 
-diccionario = {    1: ["a", 2, "Peon", "Blanco"], 2: ["b", 2, "Peon", "Blanco"], 3: ["c", 2, "Peon", "Blanco"],
+diccionario = {    1: ["a", 2, "PeonBlanco1", "Blanco"], 2: ["b", 2, "Peon", "Blanco"], 3: ["c", 2, "Peon", "Blanco"],
                    4: ["d", 2, "Peon", "Blanco"], 5: ["e", 2, "Peon", "Blanco"], 6: ["f", 2, "Peon", "Blanco"],
                    7: ["g", 2, "Peon", "Blanco"], 8: ["h", 2, "Peon", "Blanco"], 9: ["a", 1, "Torre", "Blanco"],
                    10: ["h", 1, "Torre", "Blanco"], 11: ["b", 1, "Caballo", "Blanco"],
@@ -82,7 +84,7 @@ diccionario = {    1: ["a", 2, "Peon", "Blanco"], 2: ["b", 2, "Peon", "Blanco"],
                    28: ["g", 8, "Caballo", "Negro"], 29: ["c", 8, "Alfil", "Negro"], 30: ["f", 8, "Alfil", "Negro"],
                    31: ["d", 8, "Reyna", "Negro"], 32: ["e", 8, "Rey", "Negro"], 33: ["e", 8, "Rey", "Negro"]}
 
-def imprime():
+def imprime(negro,blanco):
     tablero.imprimeTablero(negro, blanco)
     peonNegro1.mostrarPieza()
     peonNegro2.mostrarPieza()
@@ -118,7 +120,12 @@ def imprime():
     reynaBlanca1.mostrarPieza()
     reyBlanco1.mostrarPieza()
 
+
+
+
+
 def main():
+    pantalla.fill((47, 79, 79))
 
     #Creación de 32 objetos que correspponden a las 32 piezas de ajedrez
     #imprime()
@@ -153,7 +160,8 @@ def main():
     print("     1- Créditos")
 
 
-
+    negro=(100,0,0)
+    blanco=(255,255,255)
     fuente = pygame.font.Font(None, 17)
     iP = fuente.render("Iniciar Partida", 0, (0, 0, 0))
     rP = fuente.render("Reiniciar Partida", 0, (0, 0, 0))
@@ -167,28 +175,57 @@ def main():
             # Usando el evento para reconocer click izq del mouse
             if event.type == pygame.MOUSEBUTTONDOWN:
                 print("Se presionó el botón izquierdo del mouse")
+
                 mousex, mousey = pygame.mouse.get_pos()
                 print(mousex, mousey)
+                x1=piezas.conversion(mousex)
+                y1=piezas.conversion1(mousey)
+
+                print("XXX",x1)
+                print("YYYY",y1)
                 if mousex > 6 and mousex < 100 and mousey >30 and mousey < 90:
                     pantalla.fill((47, 79, 79))
                     marron = (100, 10, 10)
                     blanco = (255, 255, 255)
-                    tablero.imprimeTablero(marron, blanco)
-                    tablero.limpiaTablero()
+                    #tablero.imprimeTablero(marron, blanco)
+                    #tablero.limpiaTablero()
                 elif mousex > 10 and mousex < 90 and mousey >120 and mousey < 180:
                     pantalla.fill((47, 79, 79))
                     marron = (100, 10, 10)
                     blanco = (255, 255, 255)
-                    tablero.imprimeTablero(marron, blanco)
+                    #tablero.imprimeTablero(marron, blanco)
                     tablero.limpiaTablero()
-                elif mousex > 30 and mousex < 90 and mousey >209 and mousey < 270:
+                elif mousex > 5 and mousex < 90 and mousey >210 and mousey < 270:
                     running = False
-                elif mousex > 100 and mousex < 160 and mousey >120 and mousey < 180:
-                    pantalla.fill((47, 79, 79))
-                    marron = (100, 10, 10)
-                    blanco = (255, 255, 255)
-                    tablero.imprimeTablero(marron, blanco)
-                    tablero.limpiaTablero()
+
+                #Detección de casillas
+
+                elif x1=='a' and y1==2:
+                    estado=piezas.muevePieza(diccionario, x1, y1)
+                    print("ttrtrtrt",estado)
+                    if estado == True:
+                        print("Si existe la pieza")
+                    else:
+                        print("No hay pieza")
+
+
+                elif x1=='a' and y1==3:
+                    estado = piezas.muevePieza(diccionario, x1, y1)
+                    print("ttrtrtrt", estado)
+                    if estado == True:
+                        print("Si existe la pieza")
+                    else:
+                        print("No hay pieza")
+                    #print("PEONNegro1")
+                    #piezas.muevePieza(diccionario)
+               # elif x1=='a' and y1==2:
+               #     print("Peon blanco1")
+               #     print("EDDEDEEDE",peonBlanco1.posicionActual)
+               # elif x1=='a' and y1==3:
+                #    print("QQQQQQ",peonBlanco1.posicionActual)
+               #     peonBlanco1.movimientoPeon(x1, y1)
+               #     imprime(negro,blanco)
+
 
 
             if event.type == pygame.KEYDOWN:
@@ -196,9 +233,9 @@ def main():
                 if event.key == pygame.K_c:
                     running = False
                 #Con el botón esc se regresa a las posiciones originales
-                if event.key == pygame.K_l:
-                    tablero.imprimeTablero()
-                    tablero.limpiaTablero()
+              #  if event.key == pygame.K_l:
+                 #   tablero.imprimeTablero()
+                #    tablero.limpiaTablero()
 
                 # Con el botón i es inicio
                 if event.key == pygame.K_i:
@@ -215,35 +252,39 @@ def main():
 
                 #Con el boton o imprime pieza
                 if event.key == pygame.K_o:
-                    print("ssasa")
+                    #print("ssasa",peonBlanco1[0])
+
                     #piezas.muevePieza(diccionario)
                     peonBlanco1.posicionActual[1]=3
-                    piezas.muevePieza(diccionario)
-                    imprime()
+                    #piezas.muevePieza(diccionario)
+
 
 
                 if event.key == pygame.K_1:
                     pantalla.fill((47, 79, 79))
                     negro = (100, 10, 10)
                     blanco = (255, 255, 255)
-                    tablero.imprimeTablero(negro, blanco)
-                    imprime()
+                    #tablero.imprimeTablero(negro, blanco)
+
                 if event.key == pygame.K_2:
                     pantalla.fill((47, 79, 79))
                     negro = (100, 100, 0)
                     blanco = (255, 255, 255)
-                    tablero.imprimeTablero(negro, blanco)
-                    imprime()
+                    #tablero.imprimeTablero(negro, blanco)
+                    #imprime(negro, blanco)
                 if event.key == pygame.K_3:
                     pantalla.fill((47, 79, 79))
                     negro = (100, 100, 100)
                     blanco = (255, 255, 255)
-                    tablero.imprimeTablero(negro, blanco)
-                    imprime()
+                    #tablero.imprimeTablero(negro, blanco)
+                    #imprime()
+                if event.key == pygame.K_x:
+                    torreBlanca2.eliminaPieza()
                 if event.key == pygame.K_p:
                     print("AYUDA")
-        imprime()
-        pygame.display.update()
+
+        imprime(negro, blanco)
+        pygame.display.flip()
 
 
 main()

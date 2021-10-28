@@ -73,7 +73,7 @@ playerchange = 0
 
 
 def dibujaTablero(pantalla):
-    pantalla.fill((47, 79, 79))
+    #pantalla.fill((47, 79, 79))
     """
     # Fila 1
     pygame.draw.rect(pantalla, negro, pygame.Rect(100, 30, 60, 60))
@@ -147,7 +147,7 @@ def dibujaTablero(pantalla):
     pygame.draw.rect(pantalla, negro, pygame.Rect(400, 450, 60, 60))
     pygame.draw.rect(pantalla, blanco, pygame.Rect(460, 450, 60, 60))
     pygame.draw.rect(pantalla, negro, pygame.Rect(520, 450, 60, 60))
-
+"""
     #Pintar tablero de 8*8 con while
     i=0
     x=100
@@ -318,25 +318,29 @@ def llenaTablero(pantalla):
     # pantalla.blit(diccionario[reyNegro][2], (x, y))
 """
     # Obteniendo casilla actual del peón, en este caso peonBlanco1
-    x1 = diccionario[peonBlanco1][0]  # columna 'a'
-    y1 = diccionario[peonBlanco1][1]  # fila 2
+#    x1 = diccionario[peonBlanco1][0]  # columna 'a'
+#    y1 = diccionario[peonBlanco1][1]  # fila 2
 
     # Suponiendo que el peón se quiere mover a la casilla a3, entonces:
-    x2 = 'e'
-    y2 = 10
+#    x2 = 'e'
+#    y2 = 10
 
     # Movimiento de los peones
-    if x1 == x2 and x2=='a' or x2=='b' or x2=='c' or x2=='d' or x2=='e' or x2=='f' or x2=='g' or x2=='h' and y1 <=9:
-        print("Mueve peon")
+ #   if x1 == x2 and x2=='a' or x2=='b' or x2=='c' or x2=='d' or x2=='e' or x2=='f' or x2=='g' or x2=='h' and y1 <=9:
+  #      print("Mueve peon")
         # Actualizando la posición del peón
-        diccionario[peonBlanco1][1] = diccionario[peonBlanco1][1] + 1
-    else:
-        print("Movimiento no válido")
+   #     diccionario[peonBlanco1][1] = diccionario[peonBlanco1][1] + 1
+    #else:
+     #   print("Movimiento no válido")
 
-    print(diccionario[peonBlanco1])
-"""
+    #print(diccionario[peonBlanco1])
 
-def imprimeTablero(negro, blanco):
+
+def imprimeTablero(negro1, blanco1):
+    blanco=(255,255,255)
+    negro=(100,0,0)
+    negro=negro1
+    blanco=blanco1
     bandera=0
     x = 100
     y = 30
@@ -395,7 +399,6 @@ def limpiaTablero():
     pantalla.blit(alfilBlanco2, (405, 455))
     pantalla.blit(reynaBlanca, (285, 455))
     pantalla.blit(reyBlanco, (345, 455))
-
 
 
 
@@ -462,36 +465,41 @@ class piezaObjeto:
     def mostrarPieza(self):
         if self.posicionActual[0] == "a":
             x = 105
-        if self.posicionActual[0] == "b":
+        elif self.posicionActual[0] == "b":
             x = 165
-        if self.posicionActual[0] == "c":
+        elif self.posicionActual[0] == "c":
             x = 225
-        if self.posicionActual[0] == "d":
+        elif self.posicionActual[0] == "d":
             x = 285
-        if self.posicionActual[0] == "e":
+        elif self.posicionActual[0] == "e":
             x = 345
-        if self.posicionActual[0] == "f":
+        elif self.posicionActual[0] == "f":
             x = 405
-        if self.posicionActual[0] == "g":
+        elif self.posicionActual[0] == "g":
             x = 465
-        if self.posicionActual[0] == "h":
+        elif self.posicionActual[0] == "h":
             x = 525
+        else:
+            x = 600
         if self.posicionActual[1] == 1:
             y = 455
-        if self.posicionActual[1] == 2:
+        elif self.posicionActual[1] == 2:
             y = 395
-        if self.posicionActual[1] == 3:
+        elif self.posicionActual[1] == 3:
             y = 335
-        if self.posicionActual[1] == 4:
+        elif self.posicionActual[1] == 4:
             y = 275
-        if self.posicionActual[1] == 5:
+        elif self.posicionActual[1] == 5:
             y = 215
-        if self.posicionActual[1] == 6:
+        elif self.posicionActual[1] == 6:
             y = 155
-        if self.posicionActual[1] == 7:
+        elif self.posicionActual[1] == 7:
             y = 95
-        if self.posicionActual[1] == 8:
+        elif self.posicionActual[1] == 8:
             y = 35
+        else:
+            y=0
+
         pantalla.blit(self.imagen, (x, y))
         #pantalla.blit(self.imagen)
 
@@ -501,8 +509,11 @@ class piezaObjeto:
 
     def eliminaPieza(self):
         print("Parametro activo se cambia a falso")
+        self.posicionActual=[0,0]
+        print(self.posicionActual)
 
-   # def eliminaPieza(self):
-
+    def movimientoPeon(self, x2, y2):
+        self.posicionActual[0]=x2
+        self.posicionActual[1]=y2
 
 
