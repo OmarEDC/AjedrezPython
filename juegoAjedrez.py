@@ -1,5 +1,5 @@
 import piezas
-import tablero, pygame
+import tablero,  pygame
 
 pantalla = pygame.display.set_mode((700, 600))
 pantalla.fill((0, 0, 0))
